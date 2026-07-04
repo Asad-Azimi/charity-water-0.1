@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Drop Dash</title>
+
+  <!-- Montserrat is a clean Google Font that feels close to charity: water's brand style. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="game-card">
+      <header class="header">
+        <p class="brand-name"><span class="brand-dot"></span> charity: water</p>
+        <h1>Water Drop Dash</h1>
+        <p class="mission-text">
+          Catch clean water drops, avoid polluted drops, and learn how every drop can help communities move closer to safe water.
+        </p>
+      </header>
+
+      <section class="difficulty-section" aria-label="Choose difficulty">
+        <h2>Choose Difficulty</h2>
+
+        <div class="difficulty-buttons">
+          <button class="difficulty-btn" data-difficulty="easy" type="button">
+            Easy
+            <span>Goal: 10 drops</span>
+          </button>
+
+          <button class="difficulty-btn active" data-difficulty="normal" type="button">
+            Normal
+            <span>Goal: 15 drops</span>
+          </button>
+
+          <button class="difficulty-btn" data-difficulty="hard" type="button">
+            Hard
+            <span>Goal: 20 drops</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Game stats">
+        <div>
+          <span class="stat-label">Clean Drops</span>
+          <strong id="score">0</strong>
+        </div>
+
+        <div>
+          <span class="stat-label">Goal</span>
+          <strong id="goal">15</strong>
+        </div>
+
+        <div>
+          <span class="stat-label">Time</span>
+          <strong><span id="timer">30</span>s</strong>
+        </div>
+
+        <div>
+          <span class="stat-label">Mode</span>
+          <strong id="mode-name">Normal</strong>
+        </div>
+      </section>
+
+      <p id="message" class="message">
+        Select a difficulty, then press Start Game.
+      </p>
+
+      <section class="milestone-box" aria-label="Milestone messages">
+        <h2>Milestones</h2>
+        <ul id="milestone-list">
+          <li>Milestone messages will appear here as you collect drops.</li>
+        </ul>
+      </section>
+
+      <section id="game-area" class="game-area" aria-label="Water Drop Dash game area">
+        <div class="sky-label">clean water drops fall here</div>
+        <div id="bucket" class="bucket" aria-label="bucket"></div>
+      </section>
+
+      <section class="controls" aria-label="Game controls">
+        <button id="left-btn" class="control-btn" type="button">← Move Left</button>
+        <button id="start-game" class="start-btn" type="button">Start Game</button>
+        <button id="reset-game" class="reset-btn" type="button">Reset</button>
+        <button id="right-btn" class="control-btn" type="button">Move Right →</button>
+      </section>
+
+      <p class="keyboard-note">
+        Tip: Use the left and right arrow keys on a laptop, or use the buttons on mobile.
+      </p>
+    </section>
+
+    <footer class="footer">
+      <p>
+        Inspired by charity: water’s mission to bring clean and safe water to people around the world.
+      </p>
+      <div class="footer-links">
+        <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">Learn More</a>
+        <a href="https://www.charitywater.org/donate" target="_blank" rel="noopener noreferrer">Donate</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Sound effects. Keep these files inside a folder named "sounds". -->
+  <audio id="collect-sound" src="sounds/collect.wav" preload="auto"></audio>
+  <audio id="dirty-sound" src="sounds/dirty.wav" preload="auto"></audio>
+  <audio id="button-sound" src="sounds/button.wav" preload="auto"></audio>
+  <audio id="win-sound" src="sounds/win.wav" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
